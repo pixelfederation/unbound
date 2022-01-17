@@ -40,8 +40,7 @@ spec:
         image: {{ .Values.containers.unbound.image.repository }}:{{ .Values.containers.unbound.image.tag }}
         imagePullPolicy: {{ .Values.containers.unbound.image.pullPolicy | quote }}
         {{- with .Values.containers.unbound.resources }}
-        resources:
-          {{- toYaml . | nindent 10 }}
+        resources: {{ toYaml . | nindent 10 }}
         {{- end }}
         ports:
         - name: "dns-tcp"
@@ -63,15 +62,13 @@ spec:
         readinessProbe: {{ toYaml . | nindent 10 }}
         {{- end }}
         {{- with .Values.containers.unbound.args }}
-        args:
-          {{- toYaml . | nindent 10 }}
+        args: {{ toYaml . | nindent 10 }}
         {{- end }}
       - name: "healthz"
         image: {{ .Values.containers.healthz.image.repository }}:{{ .Values.containers.healthz.image.tag }}
         imagePullPolicy: {{ .Values.containers.healthz.image.pullPolicy | quote }}
         {{- with .Values.containers.healthz.resources }}
-        resources:
-          {{- toYaml . | nindent 10 }}
+        resources: {{ toYaml . | nindent 10 }}
         {{- end }}
         args:
           - "-cmd=nslookup health.check.unbound. 127.0.0.1:{{ .Values.containers.unbound.serverPort }} > /dev/null"
@@ -79,21 +76,21 @@ spec:
         - name: healthz
           containerPort: 8080
           protocol: TCP
+      {{- if .Values.metrics.enabled }}
       - name: "exporter"
         image: {{ .Values.containers.exporter.image.repository }}:{{ .Values.containers.exporter.image.tag }}
         imagePullPolicy: {{ .Values.containers.exporter.image.pullPolicy | quote }}
         {{- with .Values.containers.exporter.resources }}
-        resources:
-          {{- toYaml . | nindent 10 }}
+        resources: {{ toYaml . | nindent 10 }}
         {{- end }}
         {{- with .Values.containers.exporter.args }}
-        args:
-          {{- toYaml . | nindent 10 }}
+        args: {{ toYaml . | nindent 10 }}
         {{- end }}
         ports:
         - name: metrics
           containerPort: 9167
           protocol: TCP
+      {{- end }}
       volumes:
       - name: "unbound-conf"
         configMap:
