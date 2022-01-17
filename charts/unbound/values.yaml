@@ -1,7 +1,7 @@
 containers:
   unbound:
     image:
-      repository: 266775278674.dkr.ecr.eu-west-1.amazonaws.com/docker/unbound
+      repository: tombokombo/unbound
       tag: "v0.3"
       pullPolicy: IfNotPresent
     resources:
@@ -66,7 +66,7 @@ containers:
         memory: 10Mi
   exporter:
     image:
-      repository: 266775278674.dkr.ecr.eu-west-1.amazonaws.com/docker/unbound-exporter
+      repository: tombokombo/unbound-exporter
       tag: "latest"
       pullPolicy: IfNotPresent
     resources:
