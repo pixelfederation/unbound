@@ -1,0 +1,10 @@
+FROM golang:alpine3.15 as builder
+RUN go get github.com/letsencrypt/unbound_exporter
+RUN go install github.com/letsencrypt/unbound_exporter@latest
+RUN which unbound_exporter
+
+FROM alpine:3.15 
+COPY --from=builder /go/bin/unbound_exporter /bin/unbound_exporter
+RUN chmod +x /bin/unbound_exporter
+ENTRYPOINT ["/bin/unbound_exporter"]
+CMD ["-unbound.ca=", "-unbound.cert=", "-unbound.key="]
