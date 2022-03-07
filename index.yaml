@@ -17,36 +17,4 @@ entries:
     urls:
     - https://github.com/pixelfederation/unbound/releases/download/unbound-0.0.5/unbound-0.0.5.tgz
     version: 0.0.5
-  - apiVersion: v1
-    appVersion: 0.0.1
-    created: "2022-01-17T21:23:50.73772308Z"
-    description: Unbound is a fast caching DNS resolver
-    digest: 0d5de9d84d827b4d1c54cd79428eb59144d4f2a41fc21c1eebed0e1d41e369a0
-    home: https://www.unbound.net/
-    maintainers:
-    - email: thulata@pixelfederation.com
-      name: Tomas Hulata
-    name: unbound
-    sources:
-    - http://unbound.nlnetlabs.nl/svn/
-    - https://github.com/kubernetes/contrib/tree/master/exec-healthz
-    urls:
-    - https://github.com/pixelfederation/unbound/releases/download/unbound-0.0.4/unbound-0.0.4.tgz
-    version: 0.0.4
-  - apiVersion: v1
-    appVersion: 0.0.1
-    created: "2022-01-17T20:54:19.005211835Z"
-    description: Unbound is a fast caching DNS resolver
-    digest: ab24b44cd182abf4791ae61417dda38347b1c6d8f64326cb83fa571b31b119e3
-    home: https://www.unbound.net/
-    maintainers:
-    - email: thulata@pixelfederation.com
-      name: Tomas Hulata
-    name: unbound
-    sources:
-    - http://unbound.nlnetlabs.nl/svn/
-    - https://github.com/kubernetes/contrib/tree/master/exec-healthz
-    urls:
-    - https://github.com/pixelfederation/unbound/releases/download/unbound-0.0.3/unbound-0.0.3.tgz
-    version: 0.0.3
 generated: "2022-01-20T11:24:37.886656208Z"
