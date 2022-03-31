@@ -5,6 +5,7 @@ name: unbound
 version: 0.0.6
 appVersion: 0.0.1
 sources:
+- https://github.com/pixelfederation/unbound/
 - http://unbound.nlnetlabs.nl/svn/
 - https://github.com/kubernetes/contrib/tree/master/exec-healthz
 maintainers:
