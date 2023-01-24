@@ -1,8 +1,8 @@
 containers:
   unbound:
     image:
-      repository: tombokombo/unbound
-      tag: "v0.3"
+      repository: ghcr.io/pixelfederation/unbound
+      tag: v1.17.1_0
       pullPolicy: IfNotPresent
     resources:
       requests:
