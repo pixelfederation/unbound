@@ -2,7 +2,7 @@ apiVersion: v1
 description: Unbound is a fast caching DNS resolver
 home: https://www.unbound.net/
 name: unbound
-version: 0.0.7
+version: 0.0.8
 appVersion: 1.17.1
 sources:
 - https://github.com/pixelfederation/unbound/
