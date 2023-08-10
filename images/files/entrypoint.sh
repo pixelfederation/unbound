@@ -11,10 +11,10 @@ if [ "$#" -eq 0 ];then
   unbound-anchor -a ${ROOT_TRUST_ANCHOR_FILE} -v
   chown unbound:unbound ${ROOT_TRUST_ANCHOR_FILE}
   curl -Ss -m 10 https://www.internic.net/domain/named.root -o /tmp/hints
-  if [ $(grep ROOT-SERVERS /tmp/hints | wc -l) -gt 0 ];then
+  if [ $(grep -i ROOT-SERVERS /tmp/hints | wc -l) -gt 0 ];then
     mv /tmp/hints ${ROOT_HINTS_FILE}
   fi
   exec unbound -c ${ROOT_CONF_DIR}/unbound.conf
-else 
+else
   exec "$@"
 fi
