@@ -11,9 +11,9 @@ containers:
     serverPort: 53
     config:
       verbosity: 2
-      #Note  that  it takes time to print these lines which makes the server (significantly) slower.
+      # Note  that  it takes time to print these lines which makes the server (significantly) slower.
       logReplies: "yes"
-      #Note  that  it takes time to print these lines which makes the server (significantly) slower.
+      # Note  that  it takes time to print these lines which makes the server (significantly) slower.
       logQueries: "yes"
       logTagQueryreply: "yes"
       logLocalActions: "yes"
