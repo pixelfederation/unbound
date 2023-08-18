@@ -49,7 +49,7 @@ jobs:
           echo "Platforms: ${{ steps.buildx.outputs.platforms }}"
           echo "Build tag  ${{ steps.tag.outputs.tag }}"
       - name: Login to GHRC
-        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        uses: docker/login-action@v2
         with:
           registry: ${{ env.registry }}
           username: ${{ github.actor }}
