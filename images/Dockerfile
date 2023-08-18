@@ -1,4 +1,4 @@
-FROM alpine:3.17
+FROM alpine:3.18
 
 #RUN echo "http://dl-4.alpinelinux.org/alpine/latest-stable/main/" >> /etc/apk/repositories && \
 RUN apk add --no-cache --update unbound bind-tools curl
