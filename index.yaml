@@ -3,6 +3,23 @@ entries:
   unbound:
   - apiVersion: v1
     appVersion: 1.17.1
+    created: "2023-08-21T11:20:43.745189548Z"
+    description: Unbound is a fast caching DNS resolver
+    digest: 9cd29089ed85aef7c4b69389ae4c2f9931f121903700094ad63cc18164f99700
+    home: https://www.unbound.net/
+    maintainers:
+    - email: thulata@pixelfederation.com
+      name: tombokombo
+    name: unbound
+    sources:
+    - https://github.com/pixelfederation/unbound/
+    - http://unbound.nlnetlabs.nl/svn/
+    - https://github.com/kubernetes/contrib/tree/master/exec-healthz
+    urls:
+    - https://github.com/pixelfederation/unbound/releases/download/unbound-0.1.2/unbound-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: 1.17.1
     created: "2023-08-18T13:25:31.339689944Z"
     description: Unbound is a fast caching DNS resolver
     digest: 697e10455666429d4b18b645b16121b23ad349b3c2ce97434049f8d559db6c82
@@ -101,4 +118,4 @@ entries:
     urls:
     - https://github.com/pixelfederation/unbound/releases/download/unbound-0.0.5/unbound-0.0.5.tgz
     version: 0.0.5
-generated: "2023-08-18T13:25:31.339709844Z"
+generated: "2023-08-21T11:20:43.745230749Z"
