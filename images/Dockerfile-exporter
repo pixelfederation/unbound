@@ -2,7 +2,7 @@ FROM golang:alpine3.15 as builder
 RUN go install github.com/letsencrypt/unbound_exporter@v0.4.1
 RUN which unbound_exporter
 
-FROM alpine:3.18
+FROM alpine:3.19
 COPY --from=builder /go/bin/unbound_exporter /bin/unbound_exporter
 RUN chmod +x /bin/unbound_exporter
 ENTRYPOINT ["/bin/unbound_exporter"]
