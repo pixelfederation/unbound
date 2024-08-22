@@ -56,7 +56,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push unbound
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: ./images
           platforms: linux/amd64,linux/arm64
@@ -64,9 +64,10 @@ jobs:
           tags: ${{ env.registry }}/${{ github.repository }}:${{ steps.tag.outputs.tag }}, ${{ env.registry }}/${{ github.repository }}:latest
           builder: ${{ steps.buildx.outputs.name }}
           file: ./images/Dockerfile
+          provenance: false
 
       - name: Build and push exporter
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: ./images
           platforms: linux/amd64,linux/arm64
@@ -74,3 +75,4 @@ jobs:
           tags: ${{ env.registry }}/${{ github.repository }}-exporter:${{ steps.tag.outputs.tag }}, ${{ env.registry }}/${{ github.repository }}-exporter:latest
           builder: ${{ steps.buildx.outputs.name }}
           file: ./images/Dockerfile-exporter
+          provenance: false
