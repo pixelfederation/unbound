@@ -13,7 +13,7 @@ The chart can be installed as follows:
 
 ```console
 $ helm repo add unbound https://pixelfederation.github.io/unbound
-$ helm --namespace=unbound install unbound pixelfederation/unbound
+$ helm --namespace=unbound install unbound unbound/unbound
 ```
 
 To uninstall/delete the `unbound` deployment:
