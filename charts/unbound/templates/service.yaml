@@ -3,6 +3,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: {{ template "unbound.fullname" . }}
+  namespace: {{ include "unbound.namespace" . }}
   labels:
     {{- include "unbound.labels" . | nindent 4 }}
     {{- with .Values.labels }}

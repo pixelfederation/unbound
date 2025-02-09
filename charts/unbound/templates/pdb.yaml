@@ -3,6 +3,7 @@ apiVersion: {{ include "unbound.pdb.apiVersion" . }}
 kind: PodDisruptionBudget
 metadata:
   name: {{ include "unbound.fullname" . }}
+  namespace: {{ include "unbound.namespace" . }}
   labels:
     {{- include "unbound.labels" . | nindent 4 }}
 {{- with .Values.podDisruptionBudget.annotations }}
