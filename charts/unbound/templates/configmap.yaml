@@ -43,6 +43,7 @@ data:
       do-tcp: {{ $config.doTcp }}
       tcp-upstream: {{ $config.tcpUpstream | default "yes" }}
       udp-upstream-without-downstream: {{ $config.udpUpstreamWithoutDownstream | default "no" }}
+      val-permissive-mode: {{ $config.valPermissiveMode | default "no" }}
 
       prefetch: {{ $config.prefetch }}
       cache-max-ttl: {{ $config.cacheMaxTtl }}
@@ -69,6 +70,7 @@ data:
       local-data-ptr: "127.0.0.1 health.check.unbound"
 
       {{ with $config.extraServer }}
+      {{ toYaml . }}
       {{- end }}
 
       {{- range $config.localZones }}
@@ -103,4 +105,5 @@ data:
     {{- end }}
 
     {{ with $config.extra }}
+    {{ toYaml . }}
     {{- end }}

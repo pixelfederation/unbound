@@ -27,6 +27,7 @@ containers:
       cacheMaxTtl: 3600
       cacheMaxNegativeTtl: 10
       tcpUpstream: "no"
+      valPermissiveMode: "no"
       rootHints:
         enable: true
         dir: "/var/lib/unbound/root.hints"
