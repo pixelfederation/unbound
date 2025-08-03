@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ template "unbound.fullname" . }}
+  namespace: {{ include "unbound.namespace" . }}
   labels:
     app: {{ template "unbound.name" . }}
     chart: {{ template "unbound.chart" . }}
