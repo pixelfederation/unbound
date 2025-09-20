@@ -58,15 +58,6 @@ containers:
       # - name: "fake3.host.net"
       #   ip: "10.12.10.10"
 
-  healthz:
-    image:
-      repository: gcr.io/google-containers/exechealthz
-      tag: "1.2"
-      pullPolicy: IfNotPresent
-    resources:
-      requests:
-        cpu: 2m
-        memory: 10Mi
   exporter:
     image:
       repository: tombokombo/unbound-exporter
@@ -84,18 +75,22 @@ strategy:
     maxUnavailable: 1
 
 livenessProbe:
-  httpGet:
-    path: "/healthz"
-    port: 8080
+  exec:
+    command:
+    - nslookup
+    - health.check.unbound.
+    - 127.0.0.1:53
   initialDelaySeconds: 10
   timeoutSeconds: 5
   periodSeconds: 10
   failureThreshold: 10
 
 readinessProbe:
-  httpGet:
-    path: "/healthz"
-    port: 8080
+  exec:
+    command:
+    - nslookup
+    - health.check.unbound.
+    - 127.0.0.1:53
   initialDelaySeconds: 10
   timeoutSeconds: 5
   periodSeconds: 10
