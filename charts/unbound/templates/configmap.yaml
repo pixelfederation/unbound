@@ -70,7 +70,7 @@ data:
       local-data-ptr: "127.0.0.1 health.check.unbound"
 
       {{ with $config.extraServer }}
-      {{ toYaml . }}
+      {{ toYaml . | nindent 6 }}
       {{- end }}
 
       {{- range $config.localZones }}

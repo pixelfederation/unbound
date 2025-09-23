@@ -40,6 +40,10 @@ containers:
       allowedIpRanges:
       - "0.0.0.0/0"
 
+#      extraServer:
+#        foo: bar
+#        foobar: 3000
+
       # You can set as many forward zones as needed by specifying the zone name
       # and forward hosts. Forward hosts can be set by hostname or ip.
 
