@@ -13,8 +13,7 @@ if [ "$#" -eq 0 ];then
   chown unbound:unbound ${ROOT_TRUST_ANCHOR_FILE}
   curl -Ss -m 10 https://www.internic.net/domain/named.root -o /tmp/hints
   if [ $(grep -i ROOT-SERVERS /tmp/hints | wc -l) -gt 0 ];then
-    cat /tmp/hints | grep -v AAAA|grep -v B.ROOT-SERVERS.NET > /tmp/hints_filtered
-    mv /tmp/hints_filtered ${ROOT_HINTS_FILE}
+    mv /tmp/hints ${ROOT_HINTS_FILE}
   else
     echo "WARNING: Failed to download root.hints"
     touch ${ROOT_HINTS_FILE_FAILED}
