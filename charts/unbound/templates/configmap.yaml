@@ -30,9 +30,11 @@ data:
       statistics-interval: {{ $config.statsInterval | default "0"}}
       statistics-cumulative: {{ $config.statsCumulative | default "no" }}
 
-      auto-trust-anchor-file: "/var/lib/unbound/root.key"
       {{- if $config.rootHints.enable }}
       root-hints: {{ $config.rootHints.dir | quote }}
+      {{- end }}
+      {{- if $config.autoTrustAnchorFile.enable }}
+      auto-trust-anchor-file: {{ $config.autoTrustAnchorFile.file | quote }}
       {{- end }}
       do-ip4: {{ $config.doIp4 | default "yes" }}
       prefer-ip4: {{ $config.preferIp6 | default "yes" }}
