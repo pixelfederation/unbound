@@ -1,4 +1,7 @@
 # Changelog
+## [0.1.10]
+- fix extra lines to stub zone
+
 ## [0.1.8]
 - fix extra server allow multiple same options
 

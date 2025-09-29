@@ -104,6 +104,9 @@ data:
         {{- range .stubIps }}
         stub-addr: {{ . }}
         {{- end }}
+        {{- range .extraLines }}
+        {{ . }}
+        {{- end }}
     {{- end }}
 
     {{ with $config.extra }}
