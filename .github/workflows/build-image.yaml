@@ -76,3 +76,12 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           file: ./images/Dockerfile-exporter
           provenance: false
+
+      - name: Trigger Jenkins Job
+        run: |
+          curl -X POST \
+          "${{ secrets.JENKINS_URL }}/generic-webhook-trigger/invoke?token=${{ secrets.JENKINS_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "tag": "${{ steps.tag.outputs.tag }}"
+          }'
