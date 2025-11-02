@@ -96,7 +96,7 @@ livenessProbe:
     command:
     - nslookup
     - health.check.unbound.
-    - 127.0.0.1:53
+    - 127.0.0.1
   initialDelaySeconds: 10
   timeoutSeconds: 5
   periodSeconds: 10
@@ -107,7 +107,7 @@ readinessProbe:
     command:
     - nslookup
     - health.check.unbound.
-    - 127.0.0.1:53
+    - 127.0.0.1
   initialDelaySeconds: 10
   timeoutSeconds: 5
   periodSeconds: 10
