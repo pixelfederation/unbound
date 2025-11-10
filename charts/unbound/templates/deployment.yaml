@@ -64,18 +64,6 @@ spec:
         {{- with .Values.containers.unbound.args }}
         args: {{ toYaml . | nindent 10 }}
         {{- end }}
-      - name: "healthz"
-        image: {{ .Values.containers.healthz.image.repository }}:{{ .Values.containers.healthz.image.tag }}
-        imagePullPolicy: {{ .Values.containers.healthz.image.pullPolicy | quote }}
-        {{- with .Values.containers.healthz.resources }}
-        resources: {{ toYaml . | nindent 10 }}
-        {{- end }}
-        args:
-          - "-cmd=nslookup health.check.unbound. 127.0.0.1:{{ .Values.containers.unbound.serverPort }} > /dev/null"
-        ports:
-        - name: healthz
-          containerPort: 8080
-          protocol: TCP
       {{- if .Values.metrics.enabled }}
       - name: "exporter"
         image: {{ .Values.containers.exporter.image.repository }}:{{ .Values.containers.exporter.image.tag }}
