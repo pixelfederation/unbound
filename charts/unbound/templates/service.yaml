@@ -20,6 +20,9 @@ spec:
   {{- with .Values.clusterIP }}
   clusterIP: {{ . }}
   {{- end }}
+  {{- with .Values.service.externalTrafficPolicy }}
+  externalTrafficPolicy: {{ . }}
+  {{- end }}
   selector:
     {{- include "unbound.selectorLabels" . | nindent 4 }}
     {{- with .Values.labels }}
