@@ -1,4 +1,7 @@
 # Changelog
+## [0.2.1]
+- bump alpine, unbound
+
 ## [0.1.10]
 - fix extra lines to stub zone
 
