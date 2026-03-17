@@ -1,4 +1,7 @@
 # Changelog
+## [0.2.2]
+- add so-rcvbuf, so-sndbuf config
+
 ## [0.2.1]
 - bump alpine, unbound
 

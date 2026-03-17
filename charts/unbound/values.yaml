@@ -19,6 +19,8 @@ containers:
       logLocalActions: "yes"
       logServfail: "yes"
       numThreads: 1
+      soRcvbuf: 0
+      soSndbuf: 0
       # for tcp see comment on service, should be enabled
       # udp is enabled by default due to healthz container nslookup checks are udp only
       doTcp: "yes"
