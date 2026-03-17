@@ -122,6 +122,9 @@ service:
   udp:
     enabled: true
   labels: {}
+# Set the external traffic policy for ClusterIP and LB style services so that IP blocks can be used effectively
+# Caution: Local will have implications on your required pod scheduling.
+#  externalTrafficPolicy: Cluster
   annotations: {}
   topologyKeys: []
 #  - kubernetes.io/hostname
